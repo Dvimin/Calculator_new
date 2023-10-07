@@ -1,8 +1,38 @@
 #include <iostream>
+#include <math.h>
+
+class Operation {
+public:
+	virtual double perform(double leftOperand, double rightOperand) const = 0;
+};
+
+class Addition : public Operation {
+public:
+	double perform(double leftOperand, double rightOperand) const override {
+		return leftOperand + rightOperand;
+	}
+};
+
+class Subtraction : public Operation {
+public:
+	double perform(double leftOperand, double rightOperand) const override {
+		return leftOperand - rightOperand;
+	}
+};
+class Multiplication : public Operation {
+public:
+	double perform(double leftOperand, double rightOperand) const override {
+		return leftOperand * rightOperand;
+	}
+};
+class Division : public Operation {
+public:
+	double perform(double leftOperand, double rightOperand) const override {
+		return leftOperand / rightOperand;
+	}
+};
+
 int main() {
-	std::cout << 5;
-	std::cout << 6;
-	std::cout << 7;
-	std::cout << 8;
-	std::cout << 9;
+
+	return 0;
 }
