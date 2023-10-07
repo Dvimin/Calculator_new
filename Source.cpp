@@ -32,6 +32,25 @@ public:
 	}
 };
 
+class Function {
+public:
+	virtual double fun(double argument) const = 0;
+};
+
+class SinFunction : public Function {
+public:
+	double fun(double argument) const override {
+		return sin(argument);
+	}
+};
+
+class CosFunction : public Function {
+public:
+	double fun(double argument) const override {
+		return cos(argument);
+	}
+};
+
 int main() {
 
 	return 0;
