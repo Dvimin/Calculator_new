@@ -59,7 +59,7 @@ int main() {
 	std::cout << operations["-"]->perform(10, 3) << std::endl;
 	std::cout << operations["sin"]->perform(3.14) << std::endl;
 	std::cout << operations["sin"]->perform(3.14,8) << std::endl;
-	std::cout << operations["/"]->perform(-8, 0) << std::endl;
+	std::cout << operations["/"]->perform(-8, 0) << std::endl << std::endl;
 
 	return 0;
 }
