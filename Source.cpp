@@ -2,7 +2,9 @@
 #include <math.h>
 #include <map>
 #include <string>
-
+#include <Windows.h>
+//using Fp = double(*)(double);
+typedef double(*Fp) (double);
 class Operation {
 public:
 
@@ -16,14 +18,12 @@ public:
 		return sin(Operand);
 	}
 };
-
 class Addition : public Operation {
 public:
 	double perform(double leftOperand, double rightOperand) const override {
 		return leftOperand + rightOperand;
 	}
 };
-
 class Subtraction : public Operation {
 public:
 	double perform(double leftOperand, double rightOperand) const override {
@@ -42,24 +42,34 @@ public:
 		return leftOperand / rightOperand;
 	}
 };
+
 int main() {
+	HINSTANCE load = LoadLibrary(L"./plugins\\LibTan.dll");
+	//HINSTANCE load = LoadLibrary(L"C:\\Users\\Misha\\Desktop\\POLYTECH\\C++\\Calculator\\plugins\\Sin.dll");
+
+	double x = 1;
+	Fp sin = (Fp) GetProcAddress(load, "f");
 	
-	Operation* plus = new Addition();
-	Operation* minus = new Subtraction();
-	Operation* sin = new SinFunction();
-	Operation* division = new Division();
+	double y = sin(x) + sin(x);
+	std::cout << sin(x) << std::endl;
+	FreeLibrary(load);
 
-	std::map<std::string, Operation*> operations;
-	operations["+"] = plus;
-	operations["-"] = minus;
-	operations["/"] = division;
-	operations["sin"] = sin;
+	//Operation* plus = new Addition();
+	//Operation* minus = new Subtraction();
+	////Operation* sin = new SinFunction();
+	//Operation* division = new Division();
 
-	std::cout << plus->perform(10, 3) << " " << minus->perform(10, 3) << std::endl;
-	std::cout << operations["-"]->perform(10, 3) << std::endl;
-	std::cout << operations["sin"]->perform(3.14) << std::endl;
-	std::cout << operations["sin"]->perform(3.14,8) << std::endl;
-	std::cout << operations["/"]->perform(-8, 0) << std::endl << std::endl;
+	//std::map<std::string, Operation*> operations;
+	//operations["+"] = plus;
+	//operations["-"] = minus;
+	//operations["/"] = division;
+	////operations["sin"] = sin;
+
+	//std::cout << plus->perform(10, 3) << " " << minus->perform(10, 3) << std::endl;
+	//std::cout << operations["-"]->perform(10, 3) << std::endl;
+	//std::cout << operations["sin"]->perform(3.14) << std::endl;
+	//std::cout << operations["sin"]->perform(3.14,8) << std::endl;
+	//std::cout << operations["/"]->perform(-8, 0) << std::endl << std::endl;
 
 	return 0;
 }
