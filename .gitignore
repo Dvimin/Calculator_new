@@ -370,3 +370,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /my.gitignore
+/plugins/Pow.dll
+/plugins/Logarifms.dll
+/plugins/Trigonometry.dll
