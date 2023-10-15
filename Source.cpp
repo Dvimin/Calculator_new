@@ -40,25 +40,5 @@ int main() {
     }
     dstr.Clear();
 
-    //OperationsDescription& operationDesc = OperationsDescription::GetInstance();
-    //LoadBase(operationDesc);
-    //std::string operationName = "+";
-    //if (operationDesc.CheckOperator(operationName)) {
-    //    std::cout << "Operator " << operationName << " is valid." << std::endl;
-    //}
-    //operationName = "sin";
-    //if (operationDesc.CheckFunction(operationName)) {
-    //    std::cout << "Yes! Yes! " << operationName << " is valid." << std::endl;
-    //}
-
-    //ModuleManager& moduleManager = ModuleManager::GetInstance();
-    //const std::string path{ "..\\Trigonometry.dll" };
-    //std::string dllPath = std::filesystem::current_path().string() + "\\" + path;
-    ////moduleManager.LoadDll(dllPath);
-    //operationName = "Trigonometry";
-    //if (operationDesc.CheckFunction(operationName)) {
-    //    std::cout << "Yes! " << operationName << std::endl;
-
-
 	return 0;
 }
