@@ -12,6 +12,3 @@ add_executable (Calculator "Calculator/Source.cpp"
                            "Calculator/ModuleManager.h" "Calculator/ModuleManager.cpp"
                            "Calculator/Separator.h" "Calculator/Separator.cpp"  )
 install (TARGETS Calculator)
-install (TARGETS Pow DESTINATION modules)
-install (TARGETS Trigonometry DESTINATION modules)
-install (TARGETS Logarifms DESTINATION modules)
