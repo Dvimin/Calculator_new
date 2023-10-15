@@ -30,8 +30,8 @@ public:
 	Literal& operator=(const Literal& other) = default;
 	Literal& operator=(Literal&&) = default;
 	~Literal() = default;
-	double GetValue(void) const override final;
-	ElementType GetType(void) const override final;
+	double GetValue(void) const;
+	ElementType GetType(void) const;
 private:
 	const double value;
 };
@@ -45,8 +45,8 @@ public:
 	Variable& operator=(Variable&&) = default;
 	~Variable() = default;
 	static bool IsValidValueName(const std::string& name);
-	double GetValue(void) const override final;
-	ElementType GetType(void) const override final;
+	double GetValue(void) const;
+	ElementType GetType(void) const;
 	std::string GetName(void) const;
 	bool IsInit(void) const;
 	void SetValue(const double value);

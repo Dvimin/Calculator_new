@@ -51,7 +51,6 @@ public:
     };
 
     using DoBinaryOperation = std::shared_ptr<Literal>(*)(std::shared_ptr<Operand> a, std::shared_ptr<Operand> b);
-
     BinaryOperator() = delete;
     BinaryOperator(const std::string& name, int prioryty, DoBinaryOperation operation, Associative associative = Associative::LEFT) :
         name(name), prioryty(prioryty), doOperation(operation), assotiative(associative) {};

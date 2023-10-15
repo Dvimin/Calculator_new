@@ -93,6 +93,7 @@ void OperationsDescription::AddFunction(std::shared_ptr<Operation> operation) {
 
     if (!IsValidFunctionName(operation->GetTokenName()))
         throw std::exception(("\"" + operation->GetTokenName() + "\"" + " - invalid name for function").c_str());
+
     functions.insert(std::pair(operation->GetTokenName(), operation));
 }
 
@@ -231,6 +232,7 @@ ElementType CloseBracket::GetType(void) const {
 }
 
 void CloseBracket::DoOperation(DataStack& dataStack) const {
+    //do nothing
 }
 
 std::string Function::GetTokenName(void) const {

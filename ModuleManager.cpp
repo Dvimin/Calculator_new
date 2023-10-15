@@ -15,7 +15,6 @@ void ModuleManager::LoadDll(OperationsDescription& dstr) {
             hdll = LoadLibraryW(dll.path().wstring().c_str());
             if (hdll) {
                 linkedLibraries.push_back(hdll);
-
                 auto func = (Func)(GetProcAddress(hdll, LPCSTR(funcName.c_str())));
                 if (func)
                     func(dstr);

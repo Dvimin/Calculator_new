@@ -20,7 +20,7 @@ public:
 
 private:
 	ModuleManager() = default;
-	const std::string path{ "..\\Plugins" };
+	const std::string path{ "..\\plugins" };
 	const std::string funcName = "Load";
 	static std::vector<HINSTANCE> linkedLibraries;
 };

@@ -9,7 +9,7 @@
 *.filters
 Calculator.vcxproj
 Calculator.vcxproj.filters
-.dll
+
 
 # User-specific files
 *.rsuser
