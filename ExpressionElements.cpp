@@ -1,5 +1,6 @@
 #include "ExpressionElements.h"
 
+
 double Literal::GetValue(void) const {
     return value;
 }

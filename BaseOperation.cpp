@@ -1,6 +1,5 @@
 #include "BaseOperation.h"
 
-
 std::shared_ptr<Literal> Add(std::shared_ptr<Operand> a, std::shared_ptr<Operand> b) {
     return std::make_shared<Literal>(a->GetValue() + b->GetValue());
 }
